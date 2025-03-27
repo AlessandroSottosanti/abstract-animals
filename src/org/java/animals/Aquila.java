@@ -1,6 +1,8 @@
 package org.java.animals;
 
-public class Aquila extends Animale {
+import org.java.animals.Interfaces.IVolante;
+
+public class Aquila extends Animale implements IVolante {
 
     @Override
     public void verso() {
@@ -12,4 +14,8 @@ public class Aquila extends Animale {
         System.out.println(" Carne, in genere Lepri, Marmotte, Conigli selvatici, Faine ecc..");
     }
 
+    @Override
+    public void vola() {
+        System.out.println("Sto volando!");
+    }
 }

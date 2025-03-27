@@ -1,4 +1,9 @@
 package org.java.animals;
+
+import org.java.animals.Interfaces.ICamminante;
+import org.java.animals.Interfaces.INuotante;
+import org.java.animals.Interfaces.IVolante;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -21,17 +26,17 @@ public class App {
 
 
         // Passerotto
-        Passerotto nuovaPasserotto = new Passerotto();
+        Passerotto nuovoPasserotto = new Passerotto();
 
         System.out.println("Il Passerotto");
         System.out.println("Dorme:");
-        nuovaPasserotto.dormi();
+        nuovoPasserotto.dormi();
 
         System.out.println("fa il verso:");
-        nuovaPasserotto.verso();
+        nuovoPasserotto.verso();
 
         System.out.println("Mangia: ");
-        nuovaPasserotto.mangia();
+        nuovoPasserotto.mangia();
 
         System.out.println();
 
@@ -52,19 +57,38 @@ public class App {
         System.out.println();
 
         // Delfino
-        Delfino nuovDelfino = new Delfino();
+        Delfino nuovoDelfino = new Delfino();
 
         System.out.println("Il Delfino");
         System.out.println("Dorme:");
-        nuovDelfino.dormi();
+        nuovoDelfino.dormi();
 
         System.out.println("fa il verso:");
-        nuovDelfino.verso();
+        nuovoDelfino.verso();
 
         System.out.println("Mangia:");
-        nuovDelfino.mangia();
+        nuovoDelfino.mangia();
 
         System.out.println();
 
+        
+
+        System.out.println("\n=== TEST METODI SPECIFICI ===");
+        faiVolare(nuovoPasserotto);
+        faiVolare(nuovaAquila);
+        faiNuotare(nuovoDelfino);
+        faiCamminare(nuovoCane);
+    }
+
+    public static void faiVolare(IVolante animaleVolante) {
+        animaleVolante.vola();
+    }
+
+    public static void faiNuotare(INuotante animaleNuotante) {
+        animaleNuotante.nuota();
+    }
+
+    public static void faiCamminare(ICamminante animalCamminante) {
+        animalCamminante.Cammina();
     }
 }
